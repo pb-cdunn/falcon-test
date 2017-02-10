@@ -8,8 +8,7 @@ if [[ -z $FALCON_GIT_BRANCH ]]; then
   export FALCON_GIT_BRANCH=$(git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///')
 fi
 if [[ -z $FALCON_GIT_URL ]]; then
-else
-    export FALCON_GIT_URL=$(git config --get remote.origin.url)
+  export FALCON_GIT_URL=$(git config --get remote.origin.url)
 fi
 export FALCON_WORKSPACE=BUILD
 export FALCON_PREFIX=${PYTHONUSERBASE}
