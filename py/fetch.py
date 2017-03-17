@@ -49,7 +49,7 @@ def parse_url(url):
     return '{}://{}'.format(*parsed[:2])
 def main(args=sys.argv):
     default_git_server = parse_url(MY_GIT_URL)
-    default_repos = ['sat/FALCON', 'sat/pypeFLOW', 'sat/daligner', 'sat/dextractor', 'sat/damasker', 'sat/dazz-db']
+    default_repos = ['sat/FALCON', 'sat/pypeFLOW', 'sat/daligner', 'sat/dextractor', 'sat/damasker', 'sat/dazz_db']
     #default_repos = ['sat/pypeFLOW']
     description = 'Fetch FALCON, pypeFLOW.'
     parser = argparse.ArgumentParser(

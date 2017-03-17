@@ -22,15 +22,15 @@ init: # Some requirements prior to install
 	mkdir -p ${FALCON_PREFIX}/lib
 	mkdir -p ${FALCON_PREFIX}/include
 	rm -f BUILD/DAZZ_DB
-	ln -sf dazz-db BUILD/DAZZ_DB
+	ln -sf dazz_db BUILD/DAZZ_DB
 fetch:
 	py/fetch.py --branch ${FALCON_GIT_BRANCH} --dir BUILD -u
 help:
 	py/fetch.py -h
 install: install-dazz-db install-daligner install-damasker install-dextractor install-pypeFLOW install-FALCON
 install-dazz-db:
-	${MAKE} -C ${FALCON_WORKSPACE}/dazz-db all
-	PREFIX=${FALCON_PREFIX} ${MAKE} -C ${FALCON_WORKSPACE}/dazz-db ${FALCON_INSTALL_RULE}
+	${MAKE} -C ${FALCON_WORKSPACE}/dazz_db all
+	PREFIX=${FALCON_PREFIX} ${MAKE} -C ${FALCON_WORKSPACE}/dazz_db ${FALCON_INSTALL_RULE}
 install-daligner: install-dazz-db
 	${MAKE} -C ${FALCON_WORKSPACE}/daligner all
 	PREFIX=${FALCON_PREFIX} ${MAKE} -C ${FALCON_WORKSPACE}/daligner ${FALCON_INSTALL_RULE}
